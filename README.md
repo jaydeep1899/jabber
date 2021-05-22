@@ -1,0 +1,2 @@
+# jabber
+Covid vaccine notifier
