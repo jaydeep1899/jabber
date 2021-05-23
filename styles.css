@@ -1,48 +1,59 @@
-html,
-body {
+html {
   height: 100%;
 }
-.text-center{
-  background-image: linear-gradient(#ff9a9e,#fad0c4);
-}
-.mb-4{
-  position: relative;
-  align-content: center;
 
-}
 body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #fffff;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom right, #005aa7, #fffde4);
+  height: auto;
+  background-size: cover;
 }
-#Pincode{
-  width: 75%;
-  margin-bottom: 4%;
+
+.font {
+  font-family: 'Lora';
 }
-#pin-btn{
-  width:25%;
-  margin-bottom: 4%;
+.header{
+  margin-left: 15%;
+  margin-top: 3%;
+  margin-right: 15%;
+  margin-bottom: auto;
+  height: 69px;
 }
-#ifr-pin{
+.main {
+  background: rgba(255, 255, 255, 0.20);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10.0px);
+  -webkit-backdrop-filter: blur(10.0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 5% 20% 10% 10%;
+  width: 80%;
+  padding: 5%;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  width: auto;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.main input{
+  border-radius: 5px;
+  margin-bottom: 2%;
+}
+#query-sel{
+  margin-bottom: 2%;
+}
+.pin-hid{
+  display:none;
+}
+.dis-hid{
   display: none;
 }
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-#floatingInput{
-  margin-bottom: 4%;
-}
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.show{
+  display: block;
 }
