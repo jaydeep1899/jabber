@@ -45,15 +45,25 @@ body {
   border-radius: 5px;
   margin-bottom: 2%;
 }
-#query-sel{
-  margin-bottom: 2%;
-}
+
 .pin-hid{
   display:none;
+  width: 75%;
+  float: left;
 }
 .dis-hid{
   display: none;
+  width: 75%;
+  float: left;
 }
 .show{
-  display: block;
+  display: inline;
+}
+#query-sel{
+  margin-bottom: 2%;
+}
+#pin-btn, #dis-btn{
+  display:none;
+  width: 25%;
+  float: right;
 }

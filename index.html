@@ -30,12 +30,16 @@
       <option value="Pincode">Pincode</option>
       <option value="District">District</option>
     </select>
-    <input type="number" class="form-control form-control-lg pin-hid" placeholder="PinCode" min="100000" max="999999">
-    <select class="form-select form-control form-control-lg dis-hid" aria-label="Default select example">
-      <option selected>District</option>
-    </select>
+    <form class="form">
+      <input type="number" id ="Pincode" class="form-control form-control-lg pin-hid" placeholder="PinCode" min="100000" max="999999">
+      <button class="col-xs-4 col-sm-6 btn btn-primary" type="submit" onclick = "getPin()" id="pin-btn">Search</button>
+    </form>
+    <form>
+      <select class="form-select form-control form-control-lg dis-hid" aria-label="Default select example">
+        <option selected>District</option>
+      </select>
+      <button class="col-xs-4 col-sm-6 btn btn-primary" type="submit" id="dis-btn">Search</button>
+    </form>
   </div>
-  </div>
-
 </body>
 </html>
