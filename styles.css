@@ -7,6 +7,7 @@ body {
   background-image: linear-gradient(to bottom right, #005aa7, #fffde4);
   height: auto;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .font {
@@ -29,6 +30,7 @@ body {
   margin: 5% 20% 10% 10%;
   width: 80%;
   padding: 5%;
+  overflow: auto;
 }
 
 .dropdown-content {
@@ -58,7 +60,9 @@ body {
 }
 .show{
   display: inline;
+  margin-bottom: 30px;
 }
+
 #query-sel{
   margin-bottom: 2%;
 }
@@ -66,4 +70,18 @@ body {
   display:none;
   width: 25%;
   float: right;
+  margin-bottom: 2%;
+}
+#tags{
+  margin-top: 5px;
+  margin-bottom: 2%;
+  background-color: white;
+}
+.che{
+    width: 10%;
+}
+.dib{
+  width:100%;
+  border-radius: 2px;
+  margin-bottom: 1%;
 }
