@@ -1,25 +1,29 @@
 html {
-  height: 100%;
+  height: auto;
 }
 
 body {
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom right, #005aa7, #fffde4);
+  background-image: linear-gradient(#fc00ff,#00dbde);
+  background-color: radial-gradient(circle at center, black 0, white 100%);
   height: auto;
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 0.1px;
 }
 
 .font {
   font-family: 'Lora';
 }
-.header{
+
+.header {
   margin-left: 15%;
   margin-top: 3%;
   margin-right: 15%;
   margin-bottom: auto;
   height: 69px;
 }
+
 .main {
   background: rgba(255, 255, 255, 0.20);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -33,55 +37,70 @@ body {
   overflow: auto;
 }
 
-.dropdown-content {
-  display: none;
-  position: relative;
-  background-color: #f9f9f9;
-  width: auto;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 10px 10px;
-}
-
-.main input{
+.main input {
   border-radius: 5px;
   margin-bottom: 2%;
 }
 
-.pin-hid{
-  display:none;
-  width: 75%;
-  float: left;
-}
-.dis-hid{
+.pin-hid {
   display: none;
   width: 75%;
   float: left;
 }
-.show{
+
+.dis-hid {
+  display: none;
+  width: 75%;
+  float: left;
+}
+
+.show {
   display: inline;
   margin-bottom: 30px;
 }
 
-#query-sel{
+.che {
+  float: left;
+  width: 10%;
+  display: inline-block;
+}
+
+.lab {
+  width: 89%;
+  margin-right: 1%;
+  transition: color 2s;
+}
+
+.lab:hover,
+.lab:focus {
+  color: red;
+}
+
+.dib {
+  width: 100%;
+  border-radius: 2px;
+  margin-top: 2%;
+  border-bottom: 1px solid #005aa7;
+}
+
+#query-sel {
   margin-bottom: 2%;
 }
-#pin-btn, #dis-btn{
-  display:none;
+
+#pin-btn, #dis-btn {
+  display: none;
   width: 25%;
   float: right;
   margin-bottom: 2%;
 }
-#tags{
-  margin-top: 5px;
+
+#tags {
+  margin-top: 7px;
   margin-bottom: 2%;
   background-color: white;
-}
-.che{
-    width: 10%;
-}
-.dib{
-  width:100%;
-  border-radius: 2px;
-  margin-bottom: 1%;
+  border-radius: 5px;
+  max-height: 300px;
+  height: auto;
+  width: 100%;
+  overflow-y: scroll;
 }

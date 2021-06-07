@@ -14,100 +14,144 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <title>Jabber</title>
-  <style>
-    html {
-      height: 100%;
-    }
-
-    body {
-      background-repeat: no-repeat;
-      background-image: linear-gradient(to bottom right, #005aa7, #fffde4);
-      height: auto;
-      background-size: cover;
-    }
-
-    .font {
-      font-family: 'Lora';
-    }
-
-    .header {
-      margin-left: 15%;
-      margin-top: 3%;
-      margin-right: 15%;
-      margin-bottom: auto;
-      height: 69px;
-    }
-
-    .main {
-      background: rgba(255, 255, 255, 0.20);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      backdrop-filter: blur(10.0px);
-      -webkit-backdrop-filter: blur(10.0px);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      margin: 5% 20% 10% 10%;
-      width: 80%;
-      padding: 5%;
-      overflow: auto;
-    }
-
-    .main input {
-      border-radius: 5px;
-      margin-bottom: 2%;
-    }
-    
-    .pin-hid {
-      display: none;
-      width: 75%;
-      float: left;
-    }
-
-    .dis-hid {
-      display: none;
-      width: 75%;
-      float: left;
-    }
-
-    .show {
-      display: block;
-    }
-
-    #query-sel {
-      margin-bottom: 2%;
-    }
-
-    #pin-btn,
-    #dis-btn {
-      display: none;
-      width: 25%;
-      float: right;
-    }
-  </style>
 </head>
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#138808, white, #FF9933);
+    height: auto;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .font {
+    font-family: 'Lora';
+  }
+
+  .header {
+    margin-left: 15%;
+    margin-top: 3%;
+    margin-right: 15%;
+    margin-bottom: auto;
+    height: 69px;
+  }
+
+  .main {
+    background: rgba(255, 255, 255, 0.20);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.0px);
+    -webkit-backdrop-filter: blur(10.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 5% 20% 10% 10%;
+    width: 80%;
+    padding: 5%;
+    overflow: auto;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    width: auto;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .main input {
+    border-radius: 5px;
+    margin-bottom: 2%;
+  }
+
+  .pin-hid {
+    display: none;
+    width: 75%;
+    float: left;
+  }
+
+  .dis-hid {
+    display: none;
+    width: 75%;
+    float: left;
+  }
+
+  .show {
+    display: inline;
+    margin-bottom: 30px;
+  }
+
+  .che {
+    float: left;
+    width: 10%;
+    display: inline-block;
+  }
+
+  .lab {
+    width: 89%;
+    margin-right: 1%;
+    transition: color 2s;
+  }
+
+  .lab:hover,
+  .lab:focus {
+    color: red;
+  }
+
+  .dib {
+    width: 100%;
+    border-radius: 2px;
+    margin-top: 2%;
+    border-bottom: 1px solid #005aa7;
+  }
+
+  #query-sel {
+    margin-bottom: 2%;
+  }
+
+  #pin-btn,
+  #dis-btn {
+    display: none;
+    width: 25%;
+    float: right;
+    margin-bottom: 2%;
+  }
+
+  #tags {
+    margin-top: 7px;
+    margin-bottom: 2%;
+    background-color: white;
+    border-radius: 5px;
+    max-height: 300px;
+    height: auto;
+    width: 100%;
+    overflow-y: scroll;
+  }
+</style>
 
 <body>
   <div class="text-center text-monospace">
     <img class="header" src="images/favicon.gif" alt="Jabber">
     <h1 class="h1 font">Covid Vaccine Slot Notifier</h1>
-    <h2 class="lead font">Run by <a href="https://www.linkedin.com/in/jaydeep-singh-072275129/">Jaydeep</a>
-      <a href="https://www.linkedin.com/in/ransomsumit/">Sumit</a>
-      <a href="https://www.instagram.com/raj.kuso/">Raj</a>
-    </h2>
+    <h2 class="lead font">Run by Jaydeep, Sumit, Raj</h2>
   </div>
   <div class="text-center text-monospace main">
-    <input type="text" class="form-control form-control-lg" placeholder="Name">
-    <input type="email" class="form-control " placeholder="Email">
-    <select onchange="query()" id="query-sel" class="form-select form-control form-control-lg" aria-label="Default select example" required>
-      <option selected>Search By</option>
-      <option value="Pincode">Pincode</option>
-      <option value="District">District</option>
-    </select>
-    <form class="form">
-      <input type="number" id="Pincode" class="form-control form-control-lg pin-hid" placeholder="PinCode" min="100000" max="999999">
-      <button class="col-xs-4 col-sm-6 btn btn-primary" type="submit" onclick="getPin()" id="pin-btn">Search</button>
-    </form>
-    <form class="form">
-      <select class="form-select form-control form-control-lg dis-hid" aria-label="Default select example">
+    <form name="theform">
+      <input type="text" class="form-control form-control-lg" placeholder="Name" onkeyup="checkform()">
+      <input type="email" class="form-control form-control-lg" placeholder="Email" onkeyup="checkform()">
+      <input type="tel" class="form-control form-control-lg" name="phone_number" id="phone_number" pattern="[6789][0-9]{9}|[0][0-9]{10}" placeholder="Phone. No. (optional)" />
+      <select onchange="query()" id="query-sel" class="form-select form-control form-control-lg" aria-label="Default select example" required>
+        <option selected>Search By</option>
+        <option value="Pincode">Pincode</option>
+        <option value="District">District</option>
+      </select>
+      <input type="number" id="Pincode" class="form-control form-control-lg pin-hid" placeholder="PinCode" min="100000" max="999999" onkeyup="checkform()">
+      <button class="col-xs-4 col-sm-6 btn btn-primary" type="button" onclick="getPin()" id="pin-btn">Search</button>
+      <select id="district-query" class="form-select form-control form-control-lg dis-hid" aria-label="Default select example" onkeyup="checkform()">
         <option selected>District</option>
         <option value="582 Adilabad">582 Adilabad</option>
         <option value="320 Agar">320 Agar</option>
@@ -865,7 +909,9 @@
         <option value="6 YSR District, Kadapa (Cuddapah)">6 YSR District, Kadapa (Cuddapah)</option>
         <option value="442 Zunheboto">442 Zunheboto</option>
       </select>
-      <button class="col-xs-4 col-sm-6 btn btn-primary" type="submit" id="dis-btn">Search</button>
+      <button class="col-xs-4 col-sm-6 btn btn-primary" onclick="getDis()" type="button" id="dis-btn">Search</button>
+      <div id="tags"></div>
+      <input class="btn btn-success btn-block" type="submit" id="submit" value="NOTIFY ME" disabled>
     </form>
   </div>
   <script>
@@ -887,6 +933,84 @@
         }
         document.getElementsByClassName("dis-hid")[0].classList.toggle("show");
         document.getElementById("dis-btn").style.display = 'inline';
+      }
+    }
+    Object.size = function(obj) {
+      var size = 0,
+        key;
+      for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+      }
+      return size;
+    };
+
+    function souper(object) {
+      temp = "";
+      var size = Object.size(object.centers);
+      for (var i = 0; i < size; i++) {
+        temp += `<div class="dib">`
+        temp += `<input class="che" type="checkbox" onchange = "checkform()" value="${object.centers[i].center_id}" id="${object.centers[i].center_id}">`
+        temp += `<label class="lab" for="${object.centers[i].center_id}">${object.centers[i].name}
+        (Address: ${object.centers[i].address}, Block: ${object.centers[i].block_name})<p>Age: ${object.centers[i].sessions[0].min_age_limit}</p></label></div>`
+      }
+      return temp;
+    }
+
+    function getPin() {
+      var p = document.getElementById("Pincode").value;
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = dd + '-' + mm + '-' + yyyy;
+      var url = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=${p}&date=${today}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(json => {
+          var radr = JSON.stringify(json);
+          var j = JSON.parse(radr);
+          var temp = souper(j);
+          document.getElementById('tags').innerHTML = temp;
+        });
+    }
+
+    function getDis() {
+      var p = document.getElementById("district-query").value.split(" ")[0];
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = dd + '-' + mm + '-' + yyyy;
+      var url = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=${p}&date=${today}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(json => {
+          var radr = JSON.stringify(json);
+          var j = JSON.parse(radr);
+          var temp = souper(j);
+          document.getElementById('tags').innerHTML = temp;
+        });
+    }
+
+    function totalchecked(f) {
+      var ch = f.children;
+      var temp = 0;
+      for (var i = 0; i < Object.size(ch); i++) {
+        if (ch[i].children[0].checked)
+          temp++;
+      }
+      return temp;
+    }
+
+    function checkform() {
+      var f = document.forms["theform"].children;
+      var total = totalchecked(f[8]);
+      if (f[0].value != "" && f[1].value != "" && total > 0) {
+        document.getElementById("submit").removeAttribute("disabled");
+      } else {
+        document.getElementById("submit").setAttribute("disabled", "disabled");
       }
     }
   </script>

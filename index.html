@@ -23,19 +23,18 @@
     <h2 class="lead font">Run by Jaydeep, Sumit, Raj</h2>
   </div>
   <div class="text-center text-monospace main">
-    <input type="text" class="form-control form-control-lg" placeholder="Name">
-    <input type="email" class="form-control " placeholder="Email">
-    <select onchange="query()" id="query-sel" class="form-select form-control form-control-lg" aria-label="Default select example" required>
-      <option selected>Search By</option>
-      <option value="Pincode">Pincode</option>
-      <option value="District">District</option>
-    </select>
-    <form class="form">
-      <input type="number" id ="Pincode" class="form-control form-control-lg pin-hid" placeholder="PinCode" min="100000" max="999999">
-      <button class="col-xs-4 col-sm-6 btn btn-primary" type="button" onclick = "getPin()" id="pin-btn">Search</button>
-    </form>
-    <form class="form">
-      <select class="form-select form-control form-control-lg dis-hid" aria-label="Default select example">
+    <form name="theform">
+      <input type="text" class="form-control form-control-lg" placeholder="Name" onkeyup="checkform()">
+      <input type="email" class="form-control form-control-lg" placeholder="Email" onkeyup="checkform()">
+      <input type="tel" class="form-control form-control-lg" name="phone_number" id="phone_number" pattern="[6789][0-9]{9}|[0][0-9]{9}" placeholder="Phone. No. (optional)" />
+      <select onchange="query()" id="query-sel" class="form-select form-control form-control-lg" aria-label="Default select example" required>
+        <option selected>Search By</option>
+        <option value="Pincode">Pincode</option>
+        <option value="District">District</option>
+      </select>
+      <input type="number" id="Pincode" class="form-control form-control-lg pin-hid" placeholder="PinCode" min="100000" max="999999" onkeyup="checkform()">
+      <button class="col-xs-4 col-sm-6 btn btn-primary" type="button" onclick="getPin()" id="pin-btn">Search</button>
+      <select id="district-query" class="form-select form-control form-control-lg dis-hid" aria-label="Default select example" onkeyup="checkform()">
         <option selected>District</option>
         <option value="582 Adilabad">582 Adilabad</option>
         <option value="320 Agar">320 Agar</option>
@@ -794,8 +793,11 @@
         <option value="442 Zunheboto">442 Zunheboto</option>
       </select>
       <button class="col-xs-4 col-sm-6 btn btn-primary" onclick="getDis()" type="button" id="dis-btn">Search</button>
+      <div id="tags"></div>
+      <input class="btn btn-danger btn-block" type="submit" id = "submit" value="NOTIFY ME" disabled>
     </form>
-    <form id="tags"></form>
+
   </div>
 </body>
+
 </html>
